@@ -4,36 +4,9 @@
   <base target="_top">
 </head>
 <body>
-  <h1>素因数分解</h1>
-  <input type="number" id="ipn">
-  <!--<button type="submit" onclick="sendnum()">計算</button>-->
+  <h1 style="text-align:center">素因数分解</h1>
   <p id="result"></p>
-  <p id = "tes"></p> 
-  <script type="text/javascript">
-    var num1;
-    var num2 = 0;
-    var i = 0;
-    setInterval(sendnum,100);
-    function sendnum(){
-      num1 = document.getElementById("ipn").value;
-      if(num1>1 && num1!=num2){
-        i+=1;
-        google.script.run.withSuccessHandler(
-          function(ret) {
-            if(ret == "OK"){
-              flag = ret;
-            }else{
-              i-=1;
-              document.getElementById("tes").innerHTML = i.toString();
-              document.getElementById("result").innerHTML = ret;
-              return;
-            }
-          }
-        ).calculation(num1);
-      }
-      num2 = num1;
-    }
-  </script>
+  <p id = "tes"></p>
 </body>
 </html>
 
